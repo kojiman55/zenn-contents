@@ -2,7 +2,7 @@
 title: "ビジネスメールの敬語をAIに添削してもらうアプリを作った"
 emoji: "✉️"
 type: "tech"
-topics: ["react", "typescript", "flutter", "aws", "gemini"]
+topics: ["react", "typescript", "aws", "gemini"]
 published: false
 ---
 
@@ -28,7 +28,6 @@ https://mail-checker.eggsystems.jp
 - **AI による総評**
 - **添削後の全文を生成してコピー**
 - **日本語・英語の両方に対応**
-- **iOS・Android アプリでも同一機能を提供**（Flutter 実装）
 
 ---
 
@@ -36,8 +35,7 @@ https://mail-checker.eggsystems.jp
 
 | レイヤー | 技術 |
 |---|---|
-| Webフロントエンド | React + TypeScript + Vite |
-| モバイル | Flutter（iOS / Android） |
+| フロントエンド | React + TypeScript + Vite |
 | ホスティング | S3 + CloudFront (OAC) |
 | バックエンド | AWS Lambda (TypeScript) / API Gateway |
 | AI | Gemini API |
@@ -69,9 +67,9 @@ Cognito認証と添削履歴の保存はデモには含まれていない。デ�
 ```typescript
 interface ReviewIssue {
   type: "error" | "warning" | "info";
-  original: string;   // 元の表現
-  suggestion: string; // 修正案
-  reason: string;     // 理由
+  original: string;
+  suggestion: string;
+  reason: string;
 }
 
 interface ReviewResponse {
@@ -104,19 +102,13 @@ interface ReviewResponse {
 
 日本語と英語では添削の評価軸がまったく違う。日本語は敬語・クッション言葉・文末表現が中心だが、英語はフォーマリティ・トーン・慣用表現が主な評価軸になる。
 
-同じAPIエンドポイントでリクエストのlanguageフィールドを見てシステムプロンプトを切り替える形にした。Lambdaのコード上は分岐が一箇所で済むので、追加言語への対応もやりやすい。
+同じAPIエンドポイントでリクエストの `language` フィールドを見てシステムプロンプトを切り替える形にした。Lambdaのコード上は分岐が一箇所で済むので、追加言語への対応もやりやすい。
 
 ```typescript
 const prompt = language === "ja"
   ? buildJapanesePrompt(text)
   : buildEnglishPrompt(text);
 ```
-
-### FlutterからAPIを呼ぶのは思ったより簡単だった
-
-WebとモバイルでAPIを共通化できるのがこの構成のいいところ。Flutterから `http` パッケージで叩くだけで、バックエンドには何も変更を加えていない。
-
-ただ、WebはCORSの設定が必要だがモバイルアプリにはCORSがない、という当たり前のことを改めて意識させられた。API GatewayのCORS設定はWebのためにあり、Flutterからのリクエストはそこを通らない。
 
 ---
 
@@ -133,8 +125,6 @@ Lambda（プロンプト組み立て → Gemini API 呼び出し → レスポ�
 ```
 
 Cognito で認証し、添削履歴を Aurora MySQL Serverless v2 に保存している。過去の添削結果をマイページで確認できる。
-
-フロントエンドは React（Web）と Flutter（iOS / Android）の2つを用意して、同じAPIバックエンドを共有している。
 
 ---
 
@@ -158,8 +148,6 @@ Aurora Serverless v2 はアクセスがないときは自動でスケールダ�
 
 構造化JSONを安定して返させるプロンプト設計が今回いちばん時間がかかった。「JSONで返してください」だけでは全然足りなくて、スキーマと具体例をセットで書く必要があった。Geminiに限らず生成AIに構造化出力をさせる場合の共通の話だと思う。
 
-同じバックエンドをWeb・iOS・Androidで使い回せたのは想定通りでよかった。Flutterを使えば1つのコードベースで両プラットフォームに対応できるので、APIさえ決まってしまえばモバイル対応のコストは想像より低い。
-
 デモはこちら。
 
 https://mail-checker.eggsystems.jp
@@ -167,3 +155,7 @@ https://mail-checker.eggsystems.jp
 フロントエンドのサンプルコードはこちら（バックエンドは非公開）。
 
 https://github.com/kojiman55/mail-checker-sample
+
+このAPIをFlutterで叩いてiOS・Androidアプリも作った。その話はこちら。
+
+<!-- TODO: Flutter版記事のURLを挿入 -->
