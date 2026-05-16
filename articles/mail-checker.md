@@ -3,7 +3,7 @@ title: "ビジネスメールの敬語をAIに添削してもらうアプリを�
 emoji: "✉️"
 type: "tech"
 topics: ["react", "typescript", "aws", "gemini"]
-published: false
+published: true
 ---
 
 ビジネスメールを送る前に、一度読み返してしまうことがある。
@@ -158,4 +158,4 @@ https://github.com/kojiman55/mail-checker
 
 このAPIをFlutterで叩いてiOS・Androidアプリも作った。その話はこちら。
 
-<!-- TODO: Flutter版記事のURLを挿入 -->
+https://zenn.dev/pickle/articles/mail-checker-flutter

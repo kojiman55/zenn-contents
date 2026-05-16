@@ -3,7 +3,7 @@ title: "Web版で作ったAPIをFlutterで叩いてiOS/Androidアプリを作っ
 emoji: "📱"
 type: "tech"
 topics: ["flutter", "dart", "ios", "android", "api"]
-published: false
+published: true
 ---
 
 前回、ビジネスメール添削WebアプリをReact + AWS Lambda + Gemini APIで作った。
