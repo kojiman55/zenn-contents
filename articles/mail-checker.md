@@ -16,7 +16,7 @@ published: false
 
 https://mail-checker.eggsystems.jp
 
-![添削画面](https://raw.githubusercontent.com/kojiman55/mail-checker-sample/main/screenshot.png)
+![添削画面](https://raw.githubusercontent.com/kojiman55/mail-checker/main/screenshot.png)
 *左にメール本文を貼り付けると、右に指摘一覧・総評・添削後の全文が返ってくる。*
 
 ---
@@ -152,9 +152,9 @@ Aurora Serverless v2 はアクセスがないときは自動でスケールダ�
 
 https://mail-checker.eggsystems.jp
 
-フロントエンドのサンプルコードはこちら（バックエンドは非公開）。
+フロントエンドのコードはこちら（バックエンドは非公開）。
 
-https://github.com/kojiman55/mail-checker-sample
+https://github.com/kojiman55/mail-checker
 
 このAPIをFlutterで叩いてiOS・Androidアプリも作った。その話はこちら。
 
