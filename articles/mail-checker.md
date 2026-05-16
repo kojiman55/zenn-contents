@@ -44,6 +44,8 @@ https://mail-checker.eggsystems.jp
 | 認証 | Amazon Cognito |
 | DB | Aurora MySQL Serverless v2（添削履歴） |
 
+Cognito認証と添削履歴の保存はデモには含まれていない。デモは登録不要でそのまま使える。
+
 ---
 
 ## 詰まったところ
