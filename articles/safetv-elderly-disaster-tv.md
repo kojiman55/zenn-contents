@@ -32,7 +32,7 @@ Android TVやFire TV Stickの普及で、Webアプリをそのままテレビの
 
 ## このデモでできること
 
-![SafeTV メイン画面](https://raw.githubusercontent.com/kojiman55/zenn-contents/main/images/safetv/main.png)
+![SafeTV メイン画面](https://raw.githubusercontent.com/kojiman55/zenn-contents/main/images/safetv/main-v2.png)
 
 初回起動時に都道府県と市区町村を選ぶだけで、以下がすべて自動で動く。
 
@@ -136,7 +136,7 @@ useEffect(() => {
 }, [alert, router])
 ```
 
-![SafeTV 避難アラート画面](https://raw.githubusercontent.com/kojiman55/zenn-contents/main/images/safetv/alert.png)
+![SafeTV 避難アラート画面](https://raw.githubusercontent.com/kojiman55/zenn-contents/main/images/safetv/alert-v2.png)
 
 アラート画面には3つのボタンだけが並ぶ。「避難所に向かう」「救助を希望する」「家族に連絡して」。デモ版ではダイアログが出るだけだが、実運用ではここに通知・連絡機能を繋ぐ想定だ。
 
