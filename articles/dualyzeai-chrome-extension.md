@@ -3,7 +3,7 @@ title: "2つのサイトをAIで比較するChrome拡張を作ってWeb Storeに
 emoji: "🔀"
 type: "tech"
 topics: ["chrome拡張機能", "javascript", "gemini", "manifest_v3"]
-published: false
+published: true
 ---
 
 ECサイトで商品を比較するとき、毎回タブを2枚開いてスクロールして見比べるのが地味につらい。仕様書と公式サイトを並べたいとき、ライバル社のサービスを比較したいとき、どうしてもウィンドウを行ったり来たりしてしまう。
@@ -137,6 +137,6 @@ BYOK なら無料枠の管理もコストもユーザー側に委ねられる。
 
 DualyzeAI は Chrome ウェブストアで公開中です。Gemini API キー（無料）があればすぐに使えます。
 
-https://chromewebstore.google.com/detail/dualyzeai/bokemejffloaffeejecamakicdlklhbp
+[Chrome Web Storeで公開中](https://chromewebstore.google.com/detail/dualyzeai/bokemejffloaffeejecamakicdlklhbp)
 
 公式サイト: https://dualyzeai.com
